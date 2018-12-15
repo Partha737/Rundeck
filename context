@@ -1,0 +1,32 @@
+<joblist>
+  <job>
+    <context>
+      <options preserveOrder='true'>
+        <option name='message' value='hello'>
+          <description>message</description>
+          <label>message</label>
+        </option>
+      </options>
+    </context>
+    <defaultTab>summary</defaultTab>
+    <description>printing conext variables</description>
+    <executionEnabled>true</executionEnabled>
+    <group>variables</group>
+    <id>context</id>
+    <loglevel>INFO</loglevel>
+    <name>context</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='parallel'>
+      <command>
+        <script><![CDATA[@option.message@
+echo @job.execid@
+echo @job.name@
+echo @node.os-arch@
+echo @node.hostname@]]></script>
+        <scriptargs />
+      </command>
+    </sequence>
+    <uuid>context</uuid>
+  </job>
+</joblist>
